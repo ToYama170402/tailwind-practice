@@ -17,7 +17,7 @@ async function fetchAll() {
     const data = await response.json();
     return parseSV(data, "\t");
   } catch (error) {
-    throw new Error(`Failed to fetch data${error}`);
+    return [];
   }
 }
 async function fetchDetail(lectureNumber: string) {
